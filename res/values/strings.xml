@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EmanTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="get_list">Načtení</string>
+    <string name="no_available">Seznam není načtený</string>
+    <string name="detail_view">Detail filmu</string>
+    <string name="image">Obrázek filmu</string>
+    <string name="poster">Obrázek filmu</string>
+    <string name="empty_detail">Detail filmu není dostupný.</string>
+    <string name="description">Popis: </string>
+    <string name="cast">Obsazení: </string>
+    <string name="loading">Načítám</string>
+    <string name="position">Pozice</string>
+    <string name="empty_list_source">Zdroj dat není k dispozici</string>
+
+</resources>
