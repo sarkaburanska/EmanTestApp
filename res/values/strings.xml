@@ -14,6 +14,7 @@
     <string name="cast">Obsazení: </string>
     <string name="loading">Načítám</string>
     <string name="position">Pozice</string>
-    <string name="empty_list_source">Zdroj dat není k dispozici</string>
+    <string name="empty_list_source">Zdroj dat není k dispozici, nejste připojen k internetu.</string>
+    <string name="empty_cache">Zdroj dat není k dispozici, nejste připojen k internetu.</string>
 
 </resources>

@@ -5,10 +5,12 @@
     android:layout_height="fill_parent"
     android:baselineAligned="false">
 
+    
     <fragment
         android:id="@+id/list_movie_fragment"
         android:layout_width="150dp"
         android:layout_weight="1"
+        android:tag="list_movie_fragment"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
         class="com.example.emantest.ListMovieFragment" />

@@ -4,7 +4,8 @@
     android:layout_height="match_parent" >
 
     <fragment
-        android:id="@+id/list_fragment"
+        android:id="@+id/list_movie_fragment"
+        android:tag="list_movie_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         class="com.example.emantest.ListMovieFragment" />

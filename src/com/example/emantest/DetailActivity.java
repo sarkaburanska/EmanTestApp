@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 
-public class DetailActivity extends FragmentActivity {
+public class DetailActivity extends FragmentActivity implements OnMovieClickedListener{
 
 	public static final String EXTRA_ID = "id";
 	
@@ -21,6 +21,11 @@ public class DetailActivity extends FragmentActivity {
         ft.replace(R.id.detail, f);
         ft.commit();
     }
+
+	@Override
+	public void onMovieClickedListener(long id) {
+		System.out.print(id);
+	}
 
 	
 }

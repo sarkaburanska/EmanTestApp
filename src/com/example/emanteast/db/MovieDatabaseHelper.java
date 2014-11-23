@@ -56,16 +56,16 @@ public class MovieDatabaseHelper implements MyDatabaseHelper<MovieEntity> {
 	@Override
 	public Cursor getListObjectNew(int offset) {
 		SQLiteDatabase db = openHelper.getReadableDatabase();
-		return db.query(TABLE_NAME, columns, null, null, null, null, COLUMN_ID+" DESC", String.valueOf(offset));
+		return db.query(TABLE_NAME, columns, null, null, null, null, COLUMN_ID + " DESC", String.valueOf(offset));
 	}
 
 	@Override
-	public void insertObject(MovieEntity object) {
-		if (getObject(object.getTitle()).getCount() > 0) {
-			System.out.println("Movie with title " + object.getTitle() + " exist.");
-			return;
-		}
-
+	public void insertObject(final MovieEntity object) {
+		/*
+		 * if (getObject(object.getTitle()).getCount() > 0) {
+		 * System.out.println("Movie with title " + object.getTitle() +
+		 * " exist."); return; }
+		 */
 		SQLiteDatabase db = openHelper.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
@@ -82,6 +82,7 @@ public class MovieDatabaseHelper implements MyDatabaseHelper<MovieEntity> {
 			e.printStackTrace();
 		}
 		db.close();
+
 	}
 
 	public int getCountOfMovie() {
@@ -93,12 +94,13 @@ public class MovieDatabaseHelper implements MyDatabaseHelper<MovieEntity> {
 		return count;
 	}
 
-	public void insertObject(List<MovieEntity> objects) {
+	public void insertObject(final List<MovieEntity> objects) {
+
 		SQLiteDatabase db = openHelper.getWritableDatabase();
 		for (MovieEntity object : objects) {
-			if (getObject(object.getTitle()).getCount() > 0) {
-				continue;
-			}
+			/*
+			 * if (getObject(object.getTitle()).getCount() > 0) { continue; }
+			 */
 			ContentValues values = new ContentValues();
 			values.put(COLUMN_TITLE, object.getTitle());
 			values.put(COLUMN_POSTER, object.getPoster());
@@ -106,7 +108,7 @@ public class MovieDatabaseHelper implements MyDatabaseHelper<MovieEntity> {
 			values.put(COLUMN_CAST, object.getAbridged_cast());
 			values.put(COLUMN_YEAR, object.getYear());
 			try {
-				long id = db.insertOrThrow(TABLE_NAME, null, values);
+				db.insertOrThrow(TABLE_NAME, null, values);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -133,6 +135,7 @@ public class MovieDatabaseHelper implements MyDatabaseHelper<MovieEntity> {
 	}
 
 	public MovieEntity populateMovie(Cursor object) {
+
 		object.moveToFirst();
 		if (object != null && object.getCount() > 0 && object.moveToFirst()) {
 			MovieEntity movie = new MovieEntity(object.getString(object.getColumnIndex(COLUMN_ID)), object.getString(object.getColumnIndex(COLUMN_TITLE)), object.getInt(object.getColumnIndex(COLUMN_YEAR)), object.getString(object.getColumnIndex(COLUMN_SYNOPSIS)));
@@ -160,4 +163,5 @@ public class MovieDatabaseHelper implements MyDatabaseHelper<MovieEntity> {
 
 		return movies;
 	}
+
 }

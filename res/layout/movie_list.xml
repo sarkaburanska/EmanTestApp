@@ -3,26 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-<!--   <ScrollView
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" 
-    android:id="@+id/scroll_view"
-    > -->
-    
-	 <ListView
-	        android:id="@android:id/list"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	         /> 
- <!--   </ScrollView>       -->
- <!--  <TextView 
-        android:id="@+id/empty_list"
+
+    <ListView
+        android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textColor="@color/error"
-        android:textStyle="bold"
-        android:textSize="20sp"
-       />  -->  
+        android:layout_height="match_parent" />
+
+
 </LinearLayout>
